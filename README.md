@@ -9,7 +9,7 @@ An `Embedded Rust` attempt to create something small, lovely and useful...! :"}
 || #Texts || //   - `x` for `#Xiss`
 ||________|| //   - `o` for `#Okay`
 |__________| // - Btw the screen is
-|__x__o____| // for texts
+|___x__o___| // for texts
 
 // The Screen for lovely texts stored somewhere,  
 on the blockchain...?
