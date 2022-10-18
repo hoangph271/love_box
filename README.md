@@ -14,3 +14,7 @@ An `Embedded Rust` attempt to create something small, lovely and useful...! :"}
 // The Screen for lovely texts stored somewhere,  
 on the blockchain...?
 ```
+
+## Issues:
+- Join new APs...?
+- 
