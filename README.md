@@ -9,7 +9,7 @@ An `Embedded Rust` attempt to create something small, lovely and useful...! :"}
 || #Texts || //   - `x` for `#Xiss`
 ||________|| //   - `o` for `#Okay`
 |__________| // - Btw the screen is
-|___x__o___| // for texts
+|__x__o____| // for texts
 
 // The Screen for lovely texts stored somewhere,  
 on the blockchain...?
@@ -17,4 +17,4 @@ on the blockchain...?
 
 ## Issues:
 - Join new APs...?
-- 
+- How to power it...?
