@@ -18,3 +18,4 @@ on the blockchain...?
 ## Issues:
 - Join new APs...?
 - How to power it...?
+- Not having a Pico W
