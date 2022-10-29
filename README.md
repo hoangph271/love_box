@@ -2,7 +2,7 @@
 
 An `Embedded Rust` attempt to create something small, lovely and useful...! :"}  
 
-```
+```js
  __________
 | ________ | // - It's a Pico W
 || Lovely || // - With two buttons
@@ -11,8 +11,8 @@ An `Embedded Rust` attempt to create something small, lovely and useful...! :"}
 |__________| // - Btw the screen is
 |__x__o____| // for texts
 
-// The Screen for lovely texts stored somewhere,  
-on the blockchain...?
+/* The Screen is for lovely texts stored somewhere,  
+on the blockchain...? */
 ```
 
 ## Issues:
