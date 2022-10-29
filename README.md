@@ -8,8 +8,8 @@ An `Embedded Rust` attempt to create something small, lovely and useful...! :"}
 || Lovely || // - With two buttons
 || #Texts || //   - `x` for `#Xiss`
 ||________|| //   - `o` for `#Okay`
-|__________| // - Btw the screen is
-|__x__o____| // for texts
+|   x  o   |
+|__________|
 
 /* The Screen is for lovely texts stored somewhere,  
 on the blockchain...? */
