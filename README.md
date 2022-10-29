@@ -20,4 +20,4 @@ on the blockchain...?
 - [ ] How to power it...?
 - [ ] Not having a Pico W...!
 - [ ] Caching mechanism for *lovely texts*...?
-- [ ] `Rust` or `Python`...?
+- [x] ~~`Rust` or~~ `Python` - much more easier, also to learn...?
