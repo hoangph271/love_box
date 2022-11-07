@@ -1,0 +1,3 @@
+WIFI_SSID = ''
+WIFI_PASSWD = ''
+SOME_API_KEY = ''

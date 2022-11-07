@@ -18,6 +18,6 @@ on the blockchain...? */
 ## Issues:
 - [ ] Join new APs...?
 - [ ] How to power it...?
+- [x] Caching mechanism for *lovely texts* - just use files...!
 - [x] Not having a Pico W...!
-- [ ] Caching mechanism for *lovely texts*...?
 - [x] ~~`Rust` or~~ `Python` - much more easier, also to learn...?
