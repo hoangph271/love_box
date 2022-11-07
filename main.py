@@ -13,8 +13,8 @@ def send_404(client):
     client.send(f'HTTP/1.1 200 OK\nContent-Type: text/plain\n\n404 | Not Found')
     client.close()
 
-def send_text(client, content):
-    client.send(f'HTTP/1.1 200 OK\nContent-Type: text/plain\n\n{content}')
+def send_markdown(client, content):
+    client.send(f'HTTP/1.1 200 OK\nContent-Type: text/markdown\n\n{content}')
     client.close()
 
 def serve(connection):
@@ -29,17 +29,20 @@ def serve(connection):
 
         if url.startswith('/led_on'):
             led.led_on()
+            send_ok(client)
         elif url.startswith('/led_off'):
             led.led_off()
+            send_ok(client)
+        elif url == '/':
+            readme_fd = open('README.md', 'r')
+            send_markdown(client, readme_fd.read())
+            readme_fd.close()
         elif url.startswith('/exit'):
             send_ok(client)
             break
         else:
             print(f'- Unhandled URL: {url}')
             send_404(client)
-            continue
-
-        send_ok(client)
 
 serve(connection)
 
