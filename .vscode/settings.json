@@ -9,5 +9,6 @@
         ".vscode/Pico-W-Stub/stubs"
     ],
     "picowgo.syncFolder": "",
-    "picowgo.openOnStart": true
+    "picowgo.openOnStart": true,
+    "picowgo.syncFileTypes": "py,txt,log,json,xml,html,js,css,mpy,md"
 }
