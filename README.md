@@ -18,6 +18,6 @@ on the blockchain...? */
 ## Issues:
 - [ ] Join new APs...?
 - [ ] How to power it...?
-- [x] Caching mechanism for *lovely texts* - just use files...!
+- [x] Caching mechanism for *lovely texts* - [btree](https://docs.micropython.org/en/latest/library/btree.html)...!
 - [x] Not having a Pico W...!
 - [x] ~~`Rust` or~~ `Python` - much more easier, also to learn...?
