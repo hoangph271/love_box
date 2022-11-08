@@ -10,5 +10,6 @@
     ],
     "picowgo.syncFolder": "",
     "picowgo.openOnStart": true,
-    "picowgo.syncFileTypes": "py,txt,log,json,xml,html,js,css,mpy,md"
+    "picowgo.syncFileTypes": "py,txt,log,json,xml,html,js,css,mpy,md",
+    "editor.tabSize": 4
 }
