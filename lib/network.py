@@ -10,7 +10,7 @@ def connect_wifi(country, ssid, password):
     wlan.connect(ssid, password)
 
     while not wlan.isconnected() and wlan.status() >= 0:
-        print('-- Waiting to connect:')
+        print('-- Connecting...!')
         utime.sleep(1.25)
 
     return next(ip for ip in wlan.ifconfig() if ip.startswith('192.168'))

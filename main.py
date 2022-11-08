@@ -1,21 +1,12 @@
+from machine import freq
+
 from config import WIFI_COUNTRY, WIFI_SSID, WIFI_PASS
 import lib.network as network
 import lib.led as led
+from lib.http_helper import send_ok, send_404, send_text
 
 server_ip = network.connect_wifi(WIFI_COUNTRY, WIFI_SSID, WIFI_PASS)
 connection = network.open_socket(server_ip)
-
-def send_ok(client):
-    client.send(f'HTTP/1.1 200 OK\nContent-Type: text/plain\n\n200 | Ok')
-    client.close()
-
-def send_404(client):
-    client.send(f'HTTP/1.1 200 OK\nContent-Type: text/plain\n\n404 | Not Found')
-    client.close()
-
-def send_markdown(client, content):
-    client.send(f'HTTP/1.1 200 OK\nContent-Type: text/markdown\n\n{content}')
-    client.close()
 
 def serve(connection):
     print(f'-- Started server at: http://{server_ip}:80')
@@ -35,7 +26,7 @@ def serve(connection):
             send_ok(client)
         elif url == '/':
             readme_fd = open('README.md', 'r')
-            send_markdown(client, readme_fd.read())
+            send_text(client, readme_fd.read(), 'text/markdown')
             readme_fd.close()
         elif url.startswith('/exit'):
             send_ok(client)
@@ -43,6 +34,8 @@ def serve(connection):
         else:
             print(f'- Unhandled URL: {url}')
             send_404(client)
+
+print(f'-- Running at {freq() / 1_000_000} MHz')
 
 serve(connection)
 
