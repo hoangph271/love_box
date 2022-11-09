@@ -1,5 +1,5 @@
 import wifi, led
-from http_helper import send_ok, send_text, send_404
+from http_helper import send_ok, send_text, send_404, send_301
 from fs_helper import read_text_file
 
 def handle_ui_command(ui_command, client):
@@ -30,15 +30,16 @@ def start_server(server_ip):
         elif url.startswith('/led_off'):
             led.led_off()
             send_ok(client)
-        elif url == '/README.md':
-            markdown = read_text_file('README.md')
-            send_text(client, markdown, 'text/markdown')
         elif url.startswith('/exit'):
             send_ok(client)
             break
         elif url.startswith('/ui'):
             ui_command = url[len('/ui'):]
             handle_ui_command(ui_command, client)
+        elif url == '/README.md':
+            send_text(client, read_text_file('README.md'), 'text/markdown')
+        elif url == '/favicon.ico':
+            send_301(client, 'https://sneu.date/static/svg/sneu.svg')
         else:
             print(f'- Unhandled URL: {url}')
             send_404(client)
