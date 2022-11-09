@@ -1,8 +1,8 @@
 from machine import freq
 
 from config import WIFI_COUNTRY, WIFI_SSID, WIFI_PASS
+import lib.http_server.http_server as http_server
 import lib.wifi as wifi
-import lib.http_server as http_server
 
 wifi.config(WIFI_COUNTRY)
 

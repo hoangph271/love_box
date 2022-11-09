@@ -1,8 +1,8 @@
 import wifi, led
-from http_helper import send_ok, send_text, send_404, send_301
+from http_response import send_ok, send_text, send_404, send_301
 from fs_helper import read_text_file
 
-def handle_ui_command(ui_command, client):
+def _handle_ui_command(ui_command, client):
     if ui_command.startswith('/led_on'):
         led.led_on()
     elif ui_command.startswith('/led_off'):
@@ -10,7 +10,6 @@ def handle_ui_command(ui_command, client):
 
     html = read_text_file('lib/index.html')
     send_text(client, html, 'text/html')
-
 
 def start_server(server_ip):
     connection = wifi.open_socket(server_ip)
@@ -35,7 +34,7 @@ def start_server(server_ip):
             break
         elif url.startswith('/ui'):
             ui_command = url[len('/ui'):]
-            handle_ui_command(ui_command, client)
+            _handle_ui_command(ui_command, client)
         elif url == '/README.md':
             send_text(client, read_text_file('README.md'), 'text/markdown')
         elif url == '/favicon.ico':
