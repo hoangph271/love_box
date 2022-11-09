@@ -16,10 +16,10 @@ on the blockchain...? */
 ```
 
 ## TODOs:
-- [ ] fetch & store APs
+- [ ] To power it...?
 
-## Issues:
-- [ ] How to power it...?
+## DONEs:
+- [x] fetch & store APs
 - [x] Join new APs - ___how about hosting your own AP when NOT connected___...?
 - [x] Caching mechanism for *lovely texts* - [btree](https://docs.micropython.org/en/latest/library/btree.html)...!
 - [x] Not having a Pico W...!
