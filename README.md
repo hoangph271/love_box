@@ -15,9 +15,12 @@ An `Embedded Rust` attempt to create something small, lovely and useful...! :"}
 on the blockchain...? */
 ```
 
+## TODOs:
+- [ ] fetch & store APs
+
 ## Issues:
-- [ ] Join new APs...?
 - [ ] How to power it...?
+- [x] Join new APs - ___how about hosting your own AP when NOT connected___...?
 - [x] Caching mechanism for *lovely texts* - [btree](https://docs.micropython.org/en/latest/library/btree.html)...!
 - [x] Not having a Pico W...!
 - [x] ~~`Rust` or~~ `Python` - much more easier, also to learn...?
