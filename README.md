@@ -17,6 +17,7 @@ on the blockchain...? */
 
 ## TODOs:
 - [ ] To power it...?
+- [ ] Try [uasyncio](https://docs.micropython.org/en/v1.19.1/library/uasyncio.html?highlight=uasyncio)
 
 ## DONEs:
 - [x] fetch & store APs
