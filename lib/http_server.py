@@ -40,6 +40,8 @@ def start_server(server_ip):
             send_text(client, read_text_file('README.md'), 'text/markdown')
         elif url == '/favicon.ico':
             send_301(client, 'https://sneu.date/static/svg/sneu.svg')
+        elif url == '/':
+            send_301(client, '/ui')
         else:
             print(f'- Unhandled URL: {url}')
             send_404(client)
