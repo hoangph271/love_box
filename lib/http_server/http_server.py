@@ -1,5 +1,5 @@
 import wifi, led
-from http_response import send_ok, send_text, send_404, send_301
+from http_server.http_response import send_ok, send_text, send_404, send_301
 from fs_helper import read_text_file
 
 def _handle_ui_command(ui_command, client):
