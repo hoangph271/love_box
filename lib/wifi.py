@@ -22,7 +22,7 @@ def host_wifi(ssid, password):
     print(f'> Created AP: {ssid}...!')
     return _filter_ips(ap.ifconfig())
 
-def connect_wifi(ssid, password):
+def join_wifi(ssid, password):
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
 
