@@ -14,7 +14,7 @@ def _handle_ui_command(ui_command, client):
 def start_server(server_ip):
     connection = wifi.open_socket(server_ip)
 
-    print(f'-- Started server at: http://{server_ip}:80')
+    print(f'> Started server at: http://{server_ip}:80')
     led.led_on()
 
     while True:
