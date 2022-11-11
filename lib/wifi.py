@@ -19,6 +19,7 @@ def host_wifi(ssid, password):
         print('> Creating AP...!')
         utime.sleep(1.25)
 
+    print(f'> Created AP: {ssid}...!')
     return _filter_ips(ap.ifconfig())
 
 def connect_wifi(ssid, password):
@@ -30,9 +31,10 @@ def connect_wifi(ssid, password):
     wlan.connect(ssid, password)
 
     while not wlan.isconnected() and wlan.status() >= 0:
-        print(f'-- Connecting AP [{ssid}]...!')
+        print(f'> Connecting AP [{ssid}]...!')
         utime.sleep(1.25)
 
+    print(f'> Joined AP: {ssid}...!')
     return _filter_ips(wlan.ifconfig())
 
 def open_socket(ip):
