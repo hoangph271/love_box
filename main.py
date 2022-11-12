@@ -1,5 +1,4 @@
 from machine import freq
-import machine
 
 from config import *
 from lib.http_server.http_server import start_server
