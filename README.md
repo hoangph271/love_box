@@ -22,6 +22,7 @@ on the blockchain...? */
 
 ## DONEs:
 - [x] fetch & store APs
+- [x] `kv_db`
 - [x] Join new APs - ___how about hosting your own AP when NOT connected___...?
 - [x] Caching mechanism for *lovely texts* - [btree](https://docs.micropython.org/en/latest/library/btree.html)...!
 - [x] Not having a Pico W...!
