@@ -18,10 +18,10 @@ on the blockchain...? */
 ## TODOs:
 - [ ] To power it...?
 - [ ] Try [uasyncio](https://docs.micropython.org/en/v1.19.1/library/uasyncio.html?highlight=uasyncio)
-- [ ] Host AP for signing into APs
 - [ ] Async web server, currenly the server loop blocks everything
 
 ## DONEs:
+- [x] Host AP for signing into APs
 - [x] fetch & store APs
 - [x] `kv_db`
 - [x] Join new APs - ___how about hosting your own AP when NOT connected___...?
