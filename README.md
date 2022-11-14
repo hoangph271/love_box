@@ -19,6 +19,7 @@ on the blockchain...? */
 - [ ] To power it...?
 - [ ] Try [uasyncio](https://docs.micropython.org/en/v1.19.1/library/uasyncio.html?highlight=uasyncio)
 - [ ] Host AP for signing into APs
+- [ ] Async web server, currenly the server loop blocks everything
 
 ## DONEs:
 - [x] fetch & store APs
