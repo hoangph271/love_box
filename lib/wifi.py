@@ -1,4 +1,4 @@
-import network, rp2, utime, socket
+import network, rp2, socket, uasyncio
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -17,7 +17,7 @@ def _filter_ips(ips):
 def scan_wifi():
     return wlan.scan()
 
-def host_wifi(ssid, password):
+async def host_wifi(ssid, password):
     ap = network.WLAN(network.AP_IF)
 
     ap.config(ssid=ssid, key=password)
@@ -25,17 +25,17 @@ def host_wifi(ssid, password):
 
     while not ap.isconnected() and ap.status() == network.STAT_GOT_IP:
         print('> Creating AP...!')
-        utime.sleep(1.25)
+        await uasyncio.sleep(1.25)
 
     print(f'> Created AP: {ssid}...!')
     return _filter_ips(ap.ifconfig())
 
-def join_wifi(ssid, password):
+async def join_wifi(ssid, password):
     wlan.connect(ssid, password)
 
     while not wlan.isconnected() and wlan.status() >= 0:
         print(f'> Joining AP [{ssid}]...!')
-        utime.sleep(1.25)
+        await uasyncio.sleep(1.25)
 
     print(f'> Joined AP: {ssid}...!')
     return _filter_ips(wlan.ifconfig())
