@@ -1,6 +1,6 @@
 `#love_box`
 
-An `Embedded Rust` attempt to create something small, lovely and useful...! :"}  
+An `MicroPython` attempt to create something small, lovely and useful...! :"}  
 
 ```js
  __________
