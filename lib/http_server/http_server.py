@@ -21,6 +21,7 @@ def start_server(server_ip):
         client = connection.accept()[0]
         request = client.recv(1024)
         request = str(request)
+        # TODO: parse request for METHOD, also
         url = request.split()[1]
 
         if url.startswith('/led_on'):
