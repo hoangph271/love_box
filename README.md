@@ -17,6 +17,7 @@ on the blockchain...? */
 
 ## TODOs:
 - [ ] Async web server, currenly the server loop blocks everything
+- [ ] Try out controllin' motors
 
 ## DONEs:
 - [x] Try [uasyncio](https://docs.micropython.org/en/v1.19.1/library/uasyncio.html?highlight=uasyncio)
