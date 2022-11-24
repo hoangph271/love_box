@@ -9,8 +9,6 @@ async def main():
     print(f'-- STARTED: CPU@{machine.freq() / 1_000_000}MHz...!')
     led_on()
 
-    await uasyncio.sleep(1)
-
     await wifi.host_wifi(AP_SSID, AP_PASS)
     server_ip = await wifi.join_wifi(WIFI_SSID, WIFI_PASS)
 
