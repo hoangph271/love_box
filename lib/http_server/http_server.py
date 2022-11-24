@@ -1,4 +1,4 @@
-import wifi, led
+import wifi, led, motors
 from http_server.http_response import send_ok, send_text, send_404, send_301
 from fs_helper import read_text_file
 
@@ -7,9 +7,25 @@ def _handle_ui_command(ui_command, client):
         led.led_on()
     elif ui_command.startswith('/led_off'):
         led.led_off()
+    elif ui_command.startswith('/motors/forward_left'):
+        motors.forward_left()
+    elif ui_command.startswith('/motors/forward_right'):
+        motors.forward_right()
+    elif ui_command.startswith('/motors/backward_left'):
+        motors.backward_left()
+    elif ui_command.startswith('/motors/backward_right'):
+        motors.backward_right()
+    elif ui_command.startswith('/motors/stop_left'):
+        motors.stop_left()
+    elif ui_command.startswith('/motors/stop_right'):
+        motors.stop_right()
+    elif ui_command.startswith('/motors/stop'):
+        motors.stop_both()
 
     html = read_text_file('lib/index.html')
     send_text(client, html, 'text/html')
+
+    print(f'Handled UI command: {ui_command}')
 
 def start_server(server_ip):
     connection = wifi.open_socket(server_ip)
