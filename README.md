@@ -23,7 +23,7 @@ A robot with 02 wheels...!
 ### TODOs:
 - [ ] Async web server, currenly the server loop blocks everything
 - [ ] Try out controllin' motors
-- [ ] Pick another name `pico_lover` doesn't really fit anymore...!
+- [ ] Pick another name, `pico_lover` doesn't really fit anymore...!
 
 ### DONEs:
 - [x] Try [uasyncio](https://docs.micropython.org/en/v1.19.1/library/uasyncio.html?highlight=uasyncio)
