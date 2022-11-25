@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pico W</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row {
+            display: flex;
+        }
+
+        .btn-toggle {
+            padding: 0.6rem;
+            margin: 0.4rem;
+            border: 0.1rem solid royalblue;
+            border-radius: 0.4rem;
+        }
+    </style>
+</head>
+<body class="flex-col">
+    <div class="flex-row">
+        <a href="/ui/led_on" class="btn-toggle">LED On</a>
+        <a href="/ui/led_off" class="btn-toggle">LED Off</a>
+    </div>
+
+    <!-- <div class="flex-row">
+        <div class="flex-col">
+            <a href="/ui/motors/forward_left" class="btn-toggle">Forward Left</a>
+            <a href="/ui/motors/backward_left" class="btn-toggle">Backward Left</a>
+        </div>
+        <div class="flex-col">
+            <a href="/ui/motors/forward_right" class="btn-toggle">Forward Right</a>
+            <a href="/ui/motors/backward_right" class="btn-toggle">Backward Right</a>
+        </div>
+    </div>
+    <div class="flex-row">
+        <a href="/ui/motors/stop_left" class="btn-toggle">Stop Left</a>
+        <a href="/ui/motors/stop" class="btn-toggle">Stop</a>
+        <a href="/ui/motors/stop_right" class="btn-toggle">Stop Right</a>
+    </div> -->
+</body>
+<script>
+    const HTTP_ROOT = `http://${window.location.host}`
+    const sendUiCommand = url => fetch(`${HTTP_ROOT}/ui/${url}/`)
+
+    document.body.addEventListener('keydown', e => {
+        switch (e.code) {
+            case 'Space': return sendUiCommand('motors/stop')
+            case 'KeyW': return sendUiCommand('motors/forward_both')
+            case 'KeyS': return sendUiCommand('motors/backward_both')
+            case 'KeyA': return sendUiCommand('motors/turn_left')
+            case 'KeyD': return sendUiCommand('motors/turn_right')
+            default:
+                console.info(`Key code not handled: ${e.code}`)
+        }
+    })
+</script>
+</html>
