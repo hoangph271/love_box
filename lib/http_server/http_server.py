@@ -7,22 +7,34 @@ def _handle_ui_command(ui_command, client):
         led.led_on()
     elif ui_command.startswith('/led_off'):
         led.led_off()
-    elif ui_command.startswith('/motors/forward_left'):
+    elif ui_command.startswith('/motors/forward_both'):
         motors.forward_left()
-    elif ui_command.startswith('/motors/forward_right'):
         motors.forward_right()
-    elif ui_command.startswith('/motors/backward_left'):
-        motors.backward_left()
-    elif ui_command.startswith('/motors/backward_right'):
-        motors.backward_right()
-    elif ui_command.startswith('/motors/stop_left'):
+    elif ui_command.startswith('/motors/turn_left'):
         motors.stop_left()
-    elif ui_command.startswith('/motors/stop_right'):
+        motors.forward_right()
+    elif ui_command.startswith('/motors/turn_right'):
         motors.stop_right()
+        motors.forward_left()
+    # elif ui_command.startswith('/motors/forward_left'):
+    #     motors.forward_left()
+    # elif ui_command.startswith('/motors/forward_right'):
+    #     motors.forward_right()
+    elif ui_command.startswith('/motors/backward_both'):
+        motors.backward_left()
+        motors.backward_right()
+    # elif ui_command.startswith('/motors/backward_left'):
+    #     motors.backward_left()
+    # elif ui_command.startswith('/motors/backward_right'):
+    #     motors.backward_right()
+    # elif ui_command.startswith('/motors/stop_left'):
+    #     motors.stop_left()
+    # elif ui_command.startswith('/motors/stop_right'):
+    #     motors.stop_right()
     elif ui_command.startswith('/motors/stop'):
         motors.stop_both()
 
-    html = read_text_file('lib/index.html')
+    html = read_text_file('lib/http_server/index.html')
     send_text(client, html, 'text/html')
 
     print(f'Handled UI command: {ui_command}')
