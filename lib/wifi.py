@@ -6,7 +6,7 @@ rp2.country(WIFI_COUNTRY)
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 # set power mode to get WiFi power-saving off (if needed)
-wlan.config(pm = 0xa11140) # type: ignore
+# wlan.config(pm = 0xa11140) # type: ignore
 
 def _filter_ips(ips):
     formatted_ips = ', '.join(ips)

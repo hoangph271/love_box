@@ -1,4 +1,4 @@
-import wifi, led, motors
+import wifi, led, motors, uasyncio
 from http_server.http_response import send_ok, send_text, send_404, send_301
 from fs_helper import read_text_file
 
@@ -39,7 +39,18 @@ def _handle_ui_command(ui_command, client):
 
     print(f'Handled UI command: {ui_command}')
 
-def start_server(server_ip):
+def _parse_req(request):
+    request = str(request)
+    parts = request.split()
+
+    if len(parts) < 3:
+        return ('', '')
+
+    method, url, *_ = parts
+
+    return (method, url)
+
+async def start_server(server_ip):
     connection = wifi.open_socket(server_ip)
 
     print(f'> Started server at: http://{server_ip}:80')
@@ -47,10 +58,7 @@ def start_server(server_ip):
 
     while True:
         client = connection.accept()[0]
-        request = client.recv(1024)
-        request = str(request)
-        # TODO: parse request for METHOD, also
-        url = request.split()[1]
+        _, url = _parse_req(client.recv(1024))
 
         if url.startswith('/led_on'):
             led.led_on()
@@ -73,3 +81,5 @@ def start_server(server_ip):
         else:
             print(f'- Unhandled URL: {url}')
             send_404(client)
+
+        await uasyncio.sleep_ms(1)
