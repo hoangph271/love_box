@@ -20,6 +20,12 @@
 
 A robot with 02 wheels...!
 
+## How to put things together:
+
+```
+// TODO:
+```
+
 ### TODOs:
 - [ ] Async web server, currenly the server loop blocks everything
 - [ ] Try out controllin' motors
